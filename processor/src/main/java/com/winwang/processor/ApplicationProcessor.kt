@@ -57,13 +57,14 @@ class ApplicationProcessor : AbstractProcessor() {
         elements?.forEachIndexed { _, element ->
             val simpleName = element.simpleName
             //打印获取的注解的类名
-            processingEnv.messager?.printMessage(Diagnostic.Kind.NOTE, simpleName)
+            processingEnv.messager?.printMessage(Diagnostic.Kind.NOTE, "获取注解类>>>>$simpleName")
             //检查扫描到加载了注解的类是否实现了Applifecycle注解
             val typeElement = element as TypeElement
             val interfaces = typeElement.interfaces
             if (interfaces.isNullOrEmpty()) {
                 throw RuntimeException("${typeElement.qualifiedName} must implements interface com.winwang.api.IApplifecycle")
             }
+            //检测添加注解累是否实现IApplifecycle接口
             var checkInterfaceFlag = false
             for (mirror in interfaces) {
                 if ("com.winwang.api.IApplifecycle" == mirror.toString()) {
@@ -95,7 +96,7 @@ class ApplicationProcessor : AbstractProcessor() {
     }
 
     /**
-     * 通过JavaPoet生成的类对Android包的依赖太大
+     * 通过JavaPoet生成的类对Android包的依赖太大，故改用直接拼接生成代码逻辑
      */
     private fun generateJavaByJavaPoet(simpleName: Name?) {
         //需要生成的类名--也可以生成注解、枚举等
@@ -121,9 +122,13 @@ class ApplicationProcessor : AbstractProcessor() {
      * 无法引用到包含IApplifecycle带有Context的Android Library，故舍弃JavaPoet生成class文件的方式
      */
     private fun generateJavaCode(element: TypeElement): String {
+        //获取注解配置properties参数
+        val annotation = element.getAnnotation(AppLifecycle::class.java)
+        val properties = annotation.properties
+
         val sb = StringBuilder()
         //设置包名
-        sb.append("package ").append("com.winwang.applifecycle").append(";\n\n")
+        sb.append("package ").append("com.winwang.applifecycle.apt.proxy").append(";\n\n")
 
         //设置import部分
         sb.append("import android.content.Context;\n")
@@ -145,6 +150,12 @@ class ApplicationProcessor : AbstractProcessor() {
         sb.append("  @Override\n")
         sb.append("  public void onCreate(Context context) {\n")
         sb.append("    mAppLifecycle.onCreate(context);\n")
+        sb.append("  }\n\n")
+
+        //重写properties变量
+        sb.append("  @Override\n")
+        sb.append("  public int getProperties() {\n")
+        sb.append("     return $properties;\n")
         sb.append("  }\n\n")
 
         sb.append("\n}")

@@ -8,6 +8,15 @@ import android.content.Context
  **/
 interface IApplifecycle {
 
+    /**
+     * 初始化方法
+     */
     fun onCreate(context: Context)
+
+    /**
+     * 初始化优先级-默认数字越大，优先级越大
+     */
+    val properties: Int
+        get() = 1
 
 }

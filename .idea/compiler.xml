@@ -6,6 +6,7 @@
       <module name="ApplicationInit.app" target="11" />
       <module name="ApplicationInit.applifecycle-anotations" target="11" />
       <module name="ApplicationInit.applifecycle-processor" target="11" />
+      <module name="ApplicationInit.mylibrary" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
