@@ -61,8 +61,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
 
     implementation project(path: ':mylibrary')
-    implementation project(path: ':api')
-    kapt project(path: ':processor')
+    implementation project(path: ':applifecycle-api')
+    kapt project(path: ':applifecycle-processor')
 
 
 }

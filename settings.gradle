@@ -16,8 +16,8 @@
 //}
 rootProject.name = "ApplicationInit"
 include ':app'
-include ':annotation'
-include ':processor'
-include ':api'
+include ':applifecycle-annotation'
+include ':applifecycle-processor'
+include ':applifecycle-api'
 include ':applifecycle-plugin'
 include ':mylibrary'

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
-      <module name="ApplicationInit.api" target="11" />
       <module name="ApplicationInit.app" target="11" />
       <module name="ApplicationInit.applifecycle-anotations" target="11" />
-      <module name="ApplicationInit.applifecycle-processor" target="11" />
+      <module name="ApplicationInit.applifecycle-api" target="11" />
       <module name="ApplicationInit.mylibrary" target="11" />
     </bytecodeTargetLevel>
   </component>

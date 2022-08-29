@@ -33,6 +33,6 @@ android {
 dependencies {
     implementation 'androidx.core:core-ktx:1.6.21'
     testImplementation 'junit:junit:4.13.2'
-    implementation project(path: ':api')
-    kapt project(path: ':processor')
+    implementation project(path: ':applifecycle-api')
+    kapt project(path: ':applifecycle-processor')
 }
