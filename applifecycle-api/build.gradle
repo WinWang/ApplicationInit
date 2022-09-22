@@ -39,3 +39,19 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     api project(path: ':applifecycle-annotation')
 }
+
+/**
+ * 发布jitpack
+ */
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = project.groupId
+                artifactId = 'applifecycle-api'
+                version = project.libVersion
+            }
+        }
+    }
+}

@@ -17,5 +17,20 @@ dependencies {
     implementation 'com.squareup:javapoet:1.13.0'
     implementation project(path: ':applifecycle-annotation')
     //依赖apt-annotation
+}
 
+/**
+ * 发布jitpack
+ */
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.java
+                groupId = project.groupId
+                artifactId = 'applifecycle-processor'
+                version = project.libVersion
+            }
+        }
+    }
 }

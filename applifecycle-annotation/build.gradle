@@ -7,3 +7,19 @@ java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
+
+/**
+ * 发布jitpack
+ */
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.java
+                groupId = project.groupId
+                artifactId = 'applifecycle-annotation'
+                version = "1.0.0"
+            }
+        }
+    }
+}

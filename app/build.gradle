@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         //加载自定义插件
-        classpath 'com.winwang.plugin.lifecycle:ApplicationInit:1.0'
+        classpath 'com.winwang.plugin.lifecycle:applifecycle-plugin:1.0.0'
     }
 }
 

@@ -30,24 +30,39 @@ dependencies {
 
 //from components.java 发布java library
 //from components.release 发布Android Library
+//afterEvaluate {
+//    publishing {
+//        //发布服务器类似jitpack
+//        publications {
+//            release(MavenPublication) {
+//                from components.java
+//                groupId = 'com.winwang.plugin.lifecycle'
+//                artifactId = 'ApplicationInit'
+//                version = 1.0
+//            }
+//        }
+//        //发布仓库repository
+//        repositories {
+//            maven {
+//                url = "file:///Users/winwang/.m2/repository/"
+//            }
+//
+//        }
+//    }
+//}
+
+/**
+ * 发布jitpack
+ */
 afterEvaluate {
     publishing {
-        //发布服务器类似jitpack
         publications {
             release(MavenPublication) {
                 from components.java
-                groupId = 'com.winwang.plugin.lifecycle'
-                artifactId = 'ApplicationInit'
-                version = 1.0
+                groupId = project.groupId
+                artifactId = 'applifecycle-plugin'
+                version = project.libVersion
             }
         }
-        //发布仓库repository
-        repositories {
-            maven {
-                url = "file:///Users/winwang/.m2/repository/"
-            }
-
-        }
-
     }
 }
