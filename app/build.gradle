@@ -1,14 +1,14 @@
-buildscript {
-    repositories {
-        google()
-        //自定义插件maven地址
-        maven { url 'file:///Users/winwang/.m2/repository/' }
-    }
-    dependencies {
-        //加载自定义插件
-        classpath 'com.winwang.plugin.lifecycle:applifecycle-plugin:1.0.0'
-    }
-}
+//buildscript {
+//    repositories {
+//        google()
+//        //自定义插件maven地址
+//        maven { url 'file:///Users/winwang/.m2/repository/' }
+//    }
+//    dependencies {
+//        //加载自定义插件
+//        classpath 'com.winwang.plugin.lifecycle:applifecycle-plugin:1.0.0'
+//    }
+//}
 
 
 plugins {
@@ -16,7 +16,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
 }
-apply plugin: 'com.winwang.plugin.lifecycle'
+//apply plugin: 'com.winwang.plugin.lifecycle'
 
 android {
     compileSdk 32
