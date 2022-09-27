@@ -6,21 +6,28 @@
 
 1、添加依赖：
 
+```
 implementation "com.github.WinWang.ApplicationInit:applifecycle-api:$appLifecycleVersion"
+```
 
+```
 kapt "com.github.WinWang.ApplicationInit:applifecycle-processor:$appLifecycleVersion"
+```
 
 
 
 2、在需要跨模块启动的Module使用Gradle Plugin：
 
+```
 apply plugin: 'com.winwang.plugin.lifecycle'
+```
 
 
 3、代码使用：
 
 1）在Application onCrate()调用初始化 （当然也可不必在Application的onCreate调用，具体看业务初始化时机）
 
+```
 class MyApplication : Application() {
 
     override fun onCreate() {
@@ -30,14 +37,17 @@ class MyApplication : Application() {
     }
 
 }
+```
 
 2、定义各个模块启动Module
 
+```
 @AppLifecycle(properties = 2)
 class TestLib2 : IApplifecycle {
-   override fun onCreate(context: Context) {
-       Log.d("Applifecycle", "加载TestLib2启动逻辑")
-   }
+    override fun onCreate(context: Context) {
+        Log.d("Applifecycle", "加载TestLib2")
+    }
 }
+```
 
 其中的注解重的properties变量表示该模块的启动调用优先级，数字越大调用优先级越高
