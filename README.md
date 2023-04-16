@@ -60,3 +60,19 @@ class TestLib2 : IApplifecycle {
 具体应用demo可参照customView项目中集成测试使用
 
 [WinWang/customView: 前段时间闲来无事写的一些自定义控件和测试的一些实例 (github.com)](https://github.com/WinWang/customView)
+
+
+## 其他一些学习练手的项目
+
+**Flutter版本**的音乐播放App链接(getx+retrofit+dio)：https://github.com/WinWang/music_listener <br>
+
+**React版本**的开眼App链接(React18+React-Vant+Mobx+axios)：https://github.com/WinWang/react-oepn-eye <br>
+
+**Vue2版本**WanAndroid链接(Vue2+vuex+vant+axios)：https://github.com/WinWang/Vue-WanAndroid <br>
+
+**Vue3版本**WanAndroid链接(vue3+typeScript+pinia+vant+vite)：https://github.com/WinWang/Vue3-wanAndroid
+
+**Android组件化项目**ReadingGallery链接(jetpack+kotlin+koin+couroutine)：https://github.com/WinWang/ReadingGallery <br>
+
+**Android组件化项目初始化工具**ApplicationInit链接(gradle-plugin+注解APT+ASM)：https://github.com/WinWang/ApplicationInit <br>
+
