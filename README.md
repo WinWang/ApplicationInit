@@ -73,6 +73,3 @@ class TestLib2 : IApplifecycle {
 **Vue3版本**WanAndroid链接(vue3+typeScript+pinia+vant+vite)：https://github.com/WinWang/Vue3-wanAndroid
 
 **Android组件化项目**ReadingGallery链接(jetpack+kotlin+koin+couroutine)：https://github.com/WinWang/ReadingGallery <br>
-
-**Android组件化项目初始化工具**ApplicationInit链接(gradle-plugin+注解APT+ASM)：https://github.com/WinWang/ApplicationInit <br>
-
